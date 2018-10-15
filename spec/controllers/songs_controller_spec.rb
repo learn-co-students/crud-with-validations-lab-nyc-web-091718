@@ -73,7 +73,6 @@ RSpec.describe SongsController, type: :controller do
       { title: "Moon Safari" }
     end
     let(:song) { Song.create!(valid_attributes) }
-
     before do
       patch :update, { id: song.id, song: new_attributes }
     end
