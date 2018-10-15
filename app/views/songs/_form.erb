@@ -1,0 +1,20 @@
+<%= form_for @song do |f| %>
+  <% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+        <ul>
+          <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  Title?  <%= f.text_field :title, placeholder: "PLace title hur"%> <br>
+  Released? <%= f.check_box :released %> <br>
+  the year fool:<%= f.number_field :release_year, placeholder: "PLace yur hur" %> <br>
+  Who made dis? <%= f.text_field :artist_name, placeholder: "PLace artest hur" %> <br>
+  But what it be?<%= f.text_field :genre, placeholder: "PLace genes hur" %> <br>
+
+  <%= f.submit %>
+<% end %>
