@@ -1,0 +1,19 @@
+<h1>Index</h1>
+
+<table>
+
+<tbody>
+
+
+<% @songs.each do |song| %>
+<tr>
+  <td><%= song.released %></td>
+  <td><%= song.release_year %></td>
+  <td><%= song.artist_name %></td>
+  <td><%= song.title %></td>
+  <td><%= song.genre %></td>
+  <td><%= link_to "delete", song, method: :delete %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
