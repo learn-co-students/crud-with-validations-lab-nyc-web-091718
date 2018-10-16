@@ -1,0 +1,26 @@
+<h1>Songs Index</h1>
+<%= javascript_include_tag :all %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Released Status</th>
+    <th>Release Year</th>
+    <th>Artist Name</th>
+    <th>Genre</th>
+  </tr>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.released %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.artist_name %></td>
+        <td><%= song.genre %></td>
+        <td><%= link_to "Edit", edit_song_path(song) %></td>
+        <!-- link_to isn't routing to delete so I had to use button_to -->
+        <td><%= button_to 'Destroy', song_path(song), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
